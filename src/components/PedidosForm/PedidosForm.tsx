@@ -3,6 +3,7 @@ import { Input } from "../Input/Input";
 import { Button } from "../button/Button";
 import { ChangeEvent } from "react";
 import { usePedidoForm } from "../../hooks/usePedidoForm";
+import { TextArea } from "../textArea/TextArea";
 
 function PedidosForm() {
   const { errors, handleSubmit, setSelectedDate, selectedDate, register } =
@@ -55,6 +56,12 @@ function PedidosForm() {
         type="text"
         label="Hospital para o Procedimento"
         helpText={errors.hospital?.message}
+      />
+      <TextArea 
+        placeholder="Observações médicas"
+        {...register("observacao")}
+        label="Observações Médicas"
+        helpText={errors.observacao?.message}
       />
       <Button type="submit">Cadastrar</Button>
     </Container>

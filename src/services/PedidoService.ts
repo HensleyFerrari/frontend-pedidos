@@ -8,7 +8,7 @@ export class PedidoService{
     static async findAllPedidos() {
         try {
             const {data} = await httpCliente.get<PedidoReponse>(
-                `/pedidos`
+                `/pedido`
             )
             return data
         } catch(erro) {
@@ -18,6 +18,7 @@ export class PedidoService{
 
     static async createPedido(data: PedidoParams) {
         try {
+            console.log(data);
             await httpCliente.post('/pedido', {
                 ...data,
                 data_cirurgia: new Date(data.data_cirurgia).toISOString(),
