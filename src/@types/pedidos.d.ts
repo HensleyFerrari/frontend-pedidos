@@ -1,5 +1,5 @@
 export interface PedidoParams {
-    codigo: number
+    codigo?: number
     sala: string
     procedimento: string
     doutor: string
