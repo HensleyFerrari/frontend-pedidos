@@ -9,15 +9,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    ${themeSelector.breakpoint("2xl")} {
-        padding: ${themeSelector.space(4)};
-    }
-
-    ${themeSelector.breakpoint("sm")} {
-        margin-top: ${themeSelector.space(6)};
-        padding: ${themeSelector.space(4)}; 
-    }
+    margin-top: ${themeSelector.space(6)};
+    padding: ${themeSelector.space(4)};
 `;
 
 export const Nav = styled.nav`
