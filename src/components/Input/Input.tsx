@@ -21,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <>
         {label && (
           <LabelContainer>
-            <Label>Nome completo</Label>
+            <Label>{label}</Label>
           </LabelContainer>
         )}
         <Container>

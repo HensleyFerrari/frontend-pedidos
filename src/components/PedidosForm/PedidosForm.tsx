@@ -1,45 +1,60 @@
 import { Container } from "./styles";
 import { Input } from "../Input/Input";
 import { Button } from "../button/Button";
+import { ChangeEvent } from "react";
+import { usePedidoForm } from "../../hooks/usePedidoForm";
 
 function PedidosForm() {
+  const { errors, handleSubmit, setSelectedDate, selectedDate, register } =
+    usePedidoForm();
+
+  const handleDataChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedDate(event.target.value);
+  };
   return (
-    <Container>
+    <Container onSubmit={handleSubmit}>
       <Input
+        {...register("paciente")}
         placeholder="Informe o nome do Paciente"
         type="text"
         label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        helpText={errors.paciente?.message}
       />
       <Input
-        placeholder="Informe o nome do Paciente"
+        {...register("procedimento")}
+        placeholder="Informe o procedimento cirúrgico"
         type="text"
-        label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        label="Procedimento Cirúrgico"
+        helpText={errors.procedimento?.message}
       />
       <Input
-        placeholder="Informe o nome do Paciente"
+        {...register("sala")}
+        placeholder="Informe a sala para o procedimento cirúrgico"
         type="text"
-        label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        label="Sala da Cirurgia"
+        helpText={errors.sala?.message}
       />
       <Input
-        placeholder="Informe o nome do Paciente"
+        {...register("doutor")}
+        placeholder="Informe o médico responsável pelo procedimento"
         type="text"
-        label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        label="Médico Responsável"
+        helpText={errors.doutor?.message}
       />
       <Input
-        placeholder="Informe o nome do Paciente"
-        type="text"
-        label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        {...register("data_cirurgia")}
+        type="date"
+        label="Data do Procedimento Cirúrgico"
+        helpText={errors.data_cirurgia?.message}
+        value={selectedDate}
+        onChange={handleDataChange}
       />
       <Input
-        placeholder="Informe o nome do Paciente"
+        {...register("hospital")}
+        placeholder="Informe o hospital do procedimento cirúrgico"
         type="text"
-        label="Nome do Paciente"
-        helpText={"Não foi possivel Registrar"}
+        label="Hospital para o Procedimento"
+        helpText={errors.hospital?.message}
       />
       <Button type="submit">Cadastrar</Button>
     </Container>

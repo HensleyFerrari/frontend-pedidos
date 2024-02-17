@@ -35,7 +35,7 @@ export function usePedidoForm() {
         resolver: zodResolver(schema)
     })
 
-    const [selectDate, setSelectedDate] = useState("")
+    const [selectedDate, setSelectedDate] = useState("")
 
     const handleSubmit = hookFormHandleSubmit(async (data) => {
         await PedidoService.createPedido(data);
@@ -45,7 +45,7 @@ export function usePedidoForm() {
         handleSubmit,
         register,
         errors,
-        selectDate,
+        selectedDate,
         setSelectedDate
     }
 }
