@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { PedidoService } from "../services/PedidoService";
-import { redirect } from "react-router-dom";
 
 const schema = z.object({
     sala: z.string().nonempty("Sala cirúrgica é obrigatória."),
@@ -40,7 +39,6 @@ export function usePedidoForm() {
 
     const handleSubmit = hookFormHandleSubmit(async (data) => {
         await PedidoService.createPedido(data);
-        return redirect('pedidos-medicos')
     })
 
     return {

@@ -1,6 +1,5 @@
 import { PedidoParams } from "../@types/pedidos";
 import { httpCliente } from "./httpClient";
-import { redirect } from "react-router-dom";
 
 type PedidoReponse = Array<PedidoParams>
 
@@ -18,7 +17,6 @@ export class PedidoService{
 
     static async createPedido(data: PedidoParams) {
         try {
-            console.log(data);
             await httpCliente.post('/pedido', {
                 ...data,
                 data_cirurgia: new Date(data.data_cirurgia).toISOString(),
@@ -34,8 +32,7 @@ export class PedidoService{
     }
 
     static async removePedido({codigo} : PedidoParams) {
+        
         await httpCliente.delete(`/pedido/${codigo}`)
-    
-        return redirect('/pedidos-medicos')
     }
 }

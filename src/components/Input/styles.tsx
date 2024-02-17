@@ -3,7 +3,7 @@ import { themeSelector } from "../../theme";
 
 export const Container = styled.div`
   padding: ${themeSelector.space(1)} ${themeSelector.space(1)};
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   border-radius: ${themeSelector.borderRadius("md")};
   width: 1200px;
 
@@ -30,10 +30,9 @@ export const Container = styled.div`
 `;
 
 export const LabelContainer = styled.div`
-  max-width: 1200px;
+  width: 1200px;
   display: flex;
   text-align: left;
-  flex-direction: column;
 
   ${themeSelector.breakpoint("2xl")} {
     width: 1200px;
@@ -41,7 +40,7 @@ export const LabelContainer = styled.div`
 
   ${themeSelector.breakpoint("xl")} {
     width: 980px;
-  }
+  } 
 
   ${themeSelector.breakpoint("lg")} {
     width: 724px;
@@ -54,16 +53,13 @@ export const LabelContainer = styled.div`
 export const Label = styled.div`
   font-size: ${themeSelector.space(4)};
   color: #444444;
+  font-weight: 600;
 `;
 
 export const InputContainer = styled.input<{ hasError: boolean }>`
   border: none;
-  width: auto;
+  width: 100%;
   padding: ${themeSelector.space(3)};
-
-  ${themeSelector.breakpoint("lg")} {
-    width: 100%;
-  }
 
   ${(hasError) =>
     hasError &&
