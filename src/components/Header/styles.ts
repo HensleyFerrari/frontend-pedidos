@@ -3,8 +3,7 @@ import { themeSelector } from "../../theme";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-    width: full;
-    margin: auto:
+    margin: auto;
     max-width: 1200px;
 
     display: flex;
@@ -16,7 +15,7 @@ export const Container = styled.div`
     }
 
     ${themeSelector.breakpoint("sm")} {
-        margin-top: ${themeSelector.space(8)};
+        margin-top: ${themeSelector.space(6)};
         padding: ${themeSelector.space(4)}; 
     }
 `;

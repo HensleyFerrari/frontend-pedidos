@@ -1,8 +1,7 @@
+import Header from "../../components/Header/Header";
 
 function PedidosMedicos() {
-  return (
-    <div>Pedidos Medicos</div>
-  )
+  return <Header></Header>;
 }
 
-export default PedidosMedicos
+export default PedidosMedicos;

@@ -1,7 +1,12 @@
 import Header from "../../components/Header/Header";
+import { Container } from "./styles";
 
 function Home() {
-  return <Header></Header>;
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
 }
 
 export default Home;
