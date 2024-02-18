@@ -7,11 +7,11 @@ http://localhost:80
 Criar imagem do frontend no docker
 
 ```sh
-docker build --pull --rm -f "DockerFile" -t pedidofrontend:lastest "."
+docker build --pull --rm -f "Dockerfile" -t pedidofrontend:latest "."
 ```
 Roda um container da api
 ```sh
-docker run --name pedidofronted -p 80:80 api:latest
+docker run --name pedidofrontend -p 80:80 pedidofrontend:latest
 ```
 
 ## TODO ✅
