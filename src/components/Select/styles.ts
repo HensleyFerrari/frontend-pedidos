@@ -6,19 +6,19 @@ export const SelectContainer = styled.select<{haserror: boolean}>`
     padding: ${themeSelector.space(3)};
     width: 1190px;
     ${themeSelector.breakpoint("2xl")} {
-        width: 1200px;
+        width: 1190px;
     }
 
     ${themeSelector.breakpoint("xl")} {
-        width: 980px;
+        width: 970px;
     }
 
     ${themeSelector.breakpoint("lg")} {
-        width: 724px;
+        width: 714px;
     }
 
     ${themeSelector.breakpoint("sm")} {
-        width: 440px;
+        width: 430px;
     }
 
     ${(haserror) => 
