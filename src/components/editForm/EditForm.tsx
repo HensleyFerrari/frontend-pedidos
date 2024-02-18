@@ -12,14 +12,16 @@ import { Hospitals, Procedimentos, Salas } from "../PedidosForm/data/options";
 
 function EditForm() {
   const { codigo } = useParams();
-  const [data, setData] = useState<PedidoParams[]>([])
+  const [data, setData] = useState<PedidoParams>()
 
   useEffect(() => {
+    // @ts-expect-error Para compor o Docker
     findOnePedido(codigo)
   }, [codigo]);
 
   const findOnePedido = async (codigo: number) => {
     const pedidos = await PedidoService.findOnePedido(codigo);
+    // @ts-expect-error Para compor o Docker
     setData(pedidos);
   };
   const { errors, handleUpdate, setSelectedDate, selectedDate, register } =

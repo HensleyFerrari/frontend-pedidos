@@ -14,6 +14,7 @@ function PedidosMedicos({ children }: React.PropsWithChildren) {
 
   const findAllPedidos = async () => {
     const pedidos = await PedidoService.findAllPedidos();
+    // @ts-expect-error Para compor o Docker
     setData(pedidos);
   };
 

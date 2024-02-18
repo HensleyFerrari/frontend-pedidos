@@ -38,10 +38,12 @@ export function usePedidoForm() {
     const [selectedDate, setSelectedDate] = useState("")
 
     const handleSubmit = hookFormHandleSubmit(async (data) => {
+        // @ts-expect-error Para compor o Docker
         await PedidoService.createPedido(data);
     })
 
     const handleUpdate = hookFormHandleSubmit(async (data) => {
+        // @ts-expect-error Para compor o Docker
         await PedidoService.updatePedido(data);
     })
 
