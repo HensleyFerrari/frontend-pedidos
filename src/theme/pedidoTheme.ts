@@ -11,6 +11,14 @@ const lightScheme = {
     "grey-900": "#0f172a",
     "grey-950": "#020617",
 
+    "green-500": "#22c55e",
+    "green-600": "#16a34a",
+
+    "red-500": "#ef4444",
+    "red-600": "#dc2626",
+
+    "blue-500": "#3b82f6",
+
     textColor: "#18181b",  // slate-900
     iconColor: "#18181b", // slate-900
 
