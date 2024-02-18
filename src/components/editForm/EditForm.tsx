@@ -7,6 +7,8 @@ import { TextArea } from "../textArea/TextArea";
 import { useParams } from "react-router-dom";
 import { PedidoService } from "../../services/PedidoService";
 import { PedidoParams } from './../../@types/pedidos.d';
+import Select from "../Select/Select";
+import { Hospitals, Procedimentos, Salas } from "../PedidosForm/data/options";
 
 function EditForm() {
   const { codigo } = useParams();
@@ -36,21 +38,21 @@ function EditForm() {
         label="Nome do Paciente"
         helpText={errors.paciente?.message}
       />
-      <Input
+     <Select 
         {...register("procedimento")}
-        placeholder="Informe o procedimento cirúrgico"
-        type="text"
-        value={data?.procedimento || ""}
+        placeholder="Selecione o procedimento cirúrgico"
         label="Procedimento Cirúrgico"
-        helpText={errors.procedimento?.message}
+        helpText={errors.hospital?.message}
+        options={Procedimentos || []}
+        value={data?.procedimento || ""}
       />
-      <Input
+      <Select 
         {...register("sala")}
-        placeholder="Informe a sala para o procedimento cirúrgico"
-        type="text"
-        label="Sala da Cirurgia"
+        placeholder="Selecione a sala para o procedimento cirúrgico"
+        label="Sala da cirurgia"
+        helpText={errors.hospital?.message}
+        options={Salas || []}
         value={data?.sala || ""}
-        helpText={errors.sala?.message}
       />
       <Input
         {...register("doutor")}
@@ -68,13 +70,13 @@ function EditForm() {
         value={data?.data_cirurgia || selectedDate}
         onChange={handleDataChange}
       />
-      <Input
+       <Select 
         {...register("hospital")}
-        placeholder="Informe o hospital do procedimento cirúrgico"
-        type="text"
-        value={data?.hospital || ""}
+        placeholder="Selecione o Hospital"
         label="Hospital para o Procedimento"
         helpText={errors.hospital?.message}
+        options={Hospitals || []}
+        value={data?.hospital || ""}
       />
       <TextArea
         placeholder="Observações médicas"
