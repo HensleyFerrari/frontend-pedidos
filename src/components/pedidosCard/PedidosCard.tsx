@@ -1,3 +1,4 @@
+import { PedidoParams } from "../../@types/pedidos";
 import {
   Container,
   NomePaciente,
@@ -8,45 +9,75 @@ import {
   FlexBetween,
   Wrapper,
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
-function PedidosCard() {
+type PedidoCard = {
+  data: PedidoParams[];
+  onDelete: (codigo: number) => Promise<void>;
+  setData: (data: PedidoParams[]) => void;
+};
+
+function PedidosCard({ data, onDelete }: PedidoCard) {
+  const navigate = useNavigate();
+  const handleEdit = () => {
+   navigate("/")
+  };
+
+  const handleDelete = async (codigo: number) => {
+    await onDelete(codigo);
+  };
+
   return (
     <>
-      <Container>
-        <Wrapper>
-          <FlexBetween>
-            <NomePaciente>
-              <b>Nome: </b>Carlos Silva
-            </NomePaciente>
-            <Info>
-              <b>Data do Procedimento: </b>19/02/2024
-            </Info>
-          </FlexBetween>
-          <FlexRow>
-            <Info>
-              <b>Procedimento: </b>Cirurgia ocular
-            </Info>
-            <Info>
-              <b>Médico Responsável: </b>Doutor Carlos Cruz
-            </Info>
-          </FlexRow>
-          <FlexRow>
-            <Info>
-              <b>Hospital: </b>Hospital das Cruzes
-            </Info>
-            <Info>
-              <b>Sala da Cirurgia: </b>305
-            </Info>
-          </FlexRow>
-          <Info>
-            <b>Observação: </b> O paciente está apto para a cirurgia
-          </Info>
-          <FlexRow>
-            <EditButton>Editar</EditButton>
-            <DeleteButton>Deletar</DeleteButton>
-          </FlexRow>
-        </Wrapper>
-      </Container>
+      {data.map((pedido) => {
+        const dataCirurgia = new Date(pedido.data_cirurgia);
+
+        return (
+          <Container key={pedido.codigo}>
+            <Wrapper>
+              <FlexBetween>
+                <NomePaciente>{pedido.paciente}</NomePaciente>
+                <Info>
+                  <b>Data: </b>
+                  {`${dataCirurgia.getDate()}/${dataCirurgia
+                    .getMonth()
+                    .toString()
+                    .padStart(2, "0")}/${dataCirurgia.getFullYear()} `}
+                </Info>
+              </FlexBetween>
+              <FlexRow>
+                <Info>
+                  <b>Procedimento: </b>
+                  {pedido.procedimento}
+                </Info>
+                <Info>
+                  <b>Médico: </b>
+                  {pedido.doutor}
+                </Info>
+              </FlexRow>
+              <Info>
+                <b>Local: </b>
+                {pedido.hospital} - sala {pedido.sala}
+              </Info>
+              <Info>
+                <b>Observação: </b>
+                {pedido.observacao}
+              </Info>
+              <FlexRow>
+                <EditButton onClick={() => handleEdit()}>Editar</EditButton>
+                <DeleteButton
+                  onClick={() => {
+                    handleDelete(pedido.codigo);
+                    window.location.reload();
+                  }}
+                >
+                  Deletar
+                </DeleteButton>
+              </FlexRow>
+            </Wrapper>
+          </Container>
+        );
+      })}
     </>
   );
 }

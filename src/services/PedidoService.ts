@@ -26,13 +26,12 @@ export class PedidoService{
         }
     }
 
-    static async updatePedido({ codigo,...params} : PedidoParams) {
-        const {data} = await  httpCliente.put(`/pedido/${codigo}`, params);
+    static async updatePedido({codigo,...params} : PedidoParams) {
+        const { data } = await httpCliente.put(`/pedido/${codigo}`, params);
         return data;
     }
 
-    static async removePedido({codigo} : PedidoParams) {
-        
+    static async removePedido(codigo : number) {
         await httpCliente.delete(`/pedido/${codigo}`)
     }
 }

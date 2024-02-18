@@ -4,8 +4,7 @@ import { themeSelector } from "../../theme";
 export const Container = styled.div`
     max-width: 600px;
     height: 200px;
-
-    position: relative;
+    
     background-color: ${themeSelector.color("gray-50")};
     border-radius: ${themeSelector.borderRadius("xl")};
     padding: ${themeSelector.space(4)};

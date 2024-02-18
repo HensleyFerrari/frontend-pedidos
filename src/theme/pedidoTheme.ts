@@ -70,6 +70,7 @@ const pedidoTheme = {
         ...lightScheme,
     },
     breakpoint: {
+        xs: "@media (max-width: 300px)",
         sm: "@media (max-width: 640px)",
         md: "@media (max-width: 768px)",
         lg: "@media (max-width: 1024px)",
