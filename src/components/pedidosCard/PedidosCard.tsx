@@ -39,7 +39,10 @@ function PedidosCard({ data, onDelete }: PedidoCard) {
                 <NomePaciente>{pedido.paciente}</NomePaciente>
                 <Info>
                   <b>Data: </b>
-                  {`${dataCirurgia.getDate()}/${dataCirurgia
+                  {`${dataCirurgia
+                    .getDate()
+                    .toString()
+                    .padStart(2, "0")}/${dataCirurgia
                     .getMonth()
                     .toString()
                     .padStart(2, "0")}/${dataCirurgia.getFullYear()} `}
