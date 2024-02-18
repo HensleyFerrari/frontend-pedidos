@@ -20,7 +20,7 @@ export class PedidoService{
             await httpCliente.post('/pedido', {
                 ...data,
                 data_cirurgia: new Date(data.data_cirurgia).toISOString(),
-            })
+            }).then(() => alert("Pedido cirúrgico criado com sucesso!"))
         } catch (error) {
             alert('Não foi possivel criar o pedido');
         }
