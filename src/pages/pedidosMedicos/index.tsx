@@ -3,7 +3,8 @@ import PedidosCard from "../../components/pedidosCard/PedidosCard";
 import React, { useEffect, useState } from "react";
 import { PedidoParams } from "../../@types/pedidos";
 import { PedidoService } from "../../services/PedidoService";
-import { Container, Main } from "./styles";
+import { Content, Main } from "./styles";
+import { Container } from "../home/styles";
 
 function PedidosMedicos({ children }: React.PropsWithChildren) {
   const [data, setData] = useState<PedidoParams[]>([]);
@@ -25,14 +26,12 @@ function PedidosMedicos({ children }: React.PropsWithChildren) {
   return (
     <Container>
       <Header />
-      <Main>
-        {children}
-        <PedidosCard
-          data={data}
-          onDelete={onDelete}
-          setData={setData}
-        />
-      </Main>
+      <Content>        
+        <Main>
+          {children}
+          <PedidosCard data={data} onDelete={onDelete} setData={setData} />
+        </Main>
+      </Content>
     </Container>
   );
 }

@@ -11,7 +11,7 @@ function Header() {
 
         <Nav>
             <NavLink to={"/"}>Pagina Inicial</NavLink>
-            <NavLink to={"/pedidos-medicos"}>Pedidos</NavLink>
+            <NavLink to={"/pedidos-medicos"}>Pedidos Cirúrgicos</NavLink>
         </Nav>
     </Container>
   )

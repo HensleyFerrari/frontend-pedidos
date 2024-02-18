@@ -1,8 +1,8 @@
 const lightScheme = {
     "gray-50": "#f9fafb",
     "gray-100": "#f1f5f9",
-    "grey-200": "#e2e8f0",
-    "grey-300": "#cbd5e1",
+    "grey-200": "#e5e7eb",
+    "grey-300": "#d1d5db",
     "grey-400": "#94a3b8",
     "grey-500": "#64748b",
     "grey-600": "#475569",

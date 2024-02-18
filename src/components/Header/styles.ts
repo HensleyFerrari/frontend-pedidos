@@ -3,14 +3,12 @@ import { themeSelector } from "../../theme";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-    margin: auto;
-    max-width: 1200px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: ${themeSelector.space(6)};
-    padding: ${themeSelector.space(4)};
+    padding: ${themeSelector.space(8)} ${themeSelector.space(52)};
+    background-color: ${themeSelector.color("gray-50")};
+    margin-bottom: ${themeSelector.space(5)};
 `;
 
 export const Nav = styled.nav`

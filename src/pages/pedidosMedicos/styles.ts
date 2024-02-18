@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { themeSelector } from "../../theme";
 
-export const Container = styled.div`
+export const Content = styled.div`
     position: relative;
     min-height: 100vh;
     max-width: 100vw;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: ${themeSelector.space(12)};
     width: 100%;
 
