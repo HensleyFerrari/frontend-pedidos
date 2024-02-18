@@ -20,7 +20,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
                     </LabelContainer>
                 )}
                 <Container>
-                    <TextAreaContainer id={textId} hasError={true} ref={ref} {...rest} />
+                    <TextAreaContainer id={textId} hasError={true} ref={ref} {...rest} maxLength={100} />
                 </Container>
 
                 <HelpTextContainer>

@@ -40,7 +40,7 @@ export const LabelContainer = styled.div`
 
   ${themeSelector.breakpoint("xl")} {
     width: 980px;
-  } 
+  }
 
   ${themeSelector.breakpoint("lg")} {
     width: 724px;
@@ -74,7 +74,7 @@ export const HelpText = styled.p`
   margin-top: ${themeSelector.space(1)};
 `;
 export const HelpTextContainer = styled.div`
-  max-width: 1200px;
+  width: 1200px;
   display: flex;
   text-align: left;
   flex-direction: column;
