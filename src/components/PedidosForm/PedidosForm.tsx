@@ -4,6 +4,8 @@ import { Button } from "../button/Button";
 import { ChangeEvent } from "react";
 import { usePedidoForm } from "../../hooks/usePedidoForm";
 import { TextArea } from "../textArea/TextArea";
+import Select from "../Select/Select";
+import { Hospitals, Procedimentos, Salas } from "./data/options";
 
 function PedidosForm() {
   const { errors, handleSubmit, setSelectedDate, selectedDate, register } =
@@ -21,19 +23,19 @@ function PedidosForm() {
         label="Nome do Paciente"
         helpText={errors.paciente?.message}
       />
-      <Input
+      <Select 
         {...register("procedimento")}
-        placeholder="Informe o procedimento cirúrgico"
-        type="text"
+        placeholder="Selecione o procedimento cirúrgico"
         label="Procedimento Cirúrgico"
-        helpText={errors.procedimento?.message}
+        helpText={errors.hospital?.message}
+        options={Procedimentos || []}
       />
-      <Input
+      <Select 
         {...register("sala")}
-        placeholder="Informe a sala para o procedimento cirúrgico"
-        type="text"
-        label="Sala da Cirurgia"
-        helpText={errors.sala?.message}
+        placeholder="Selecione a sala para o procedimento cirúrgico"
+        label="Sala da cirurgia"
+        helpText={errors.hospital?.message}
+        options={Salas || []}
       />
       <Input
         {...register("doutor")}
@@ -50,12 +52,12 @@ function PedidosForm() {
         value={selectedDate}
         onChange={handleDataChange}
       />
-      <Input
+      <Select 
         {...register("hospital")}
-        placeholder="Informe o hospital do procedimento cirúrgico"
-        type="text"
+        placeholder="Selecione o Hospital"
         label="Hospital para o Procedimento"
         helpText={errors.hospital?.message}
+        options={Hospitals || []}
       />
       <TextArea 
         placeholder="Observações médicas"
