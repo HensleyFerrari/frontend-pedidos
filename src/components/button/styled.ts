@@ -15,8 +15,7 @@ export const ButtonContainer = styled.button`
     transition: all 0.2s ease-in-out;
 
     &:hover {
-        background: lightgray;
-        color: ${themeSelector.color("textColor")};
+        background: ${themeSelector.color("blue-800")};        
     }
 
     ${themeSelector.breakpoint("2xl")} {

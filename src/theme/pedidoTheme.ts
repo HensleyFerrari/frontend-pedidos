@@ -18,6 +18,7 @@ const lightScheme = {
     "red-600": "#dc2626",
 
     "blue-500": "#3b82f6",
+    "blue-800": "#3730a3",
 
     textColor: "#18181b",  // slate-900
     iconColor: "#18181b", // slate-900
