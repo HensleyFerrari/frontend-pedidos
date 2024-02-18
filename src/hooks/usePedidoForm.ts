@@ -41,11 +41,16 @@ export function usePedidoForm() {
         await PedidoService.createPedido(data);
     })
 
+    const handleUpdate = hookFormHandleSubmit(async (data) => {
+        await PedidoService.updatePedido(data);
+    })
+
     return {
         handleSubmit,
         register,
         errors,
         selectedDate,
-        setSelectedDate
+        setSelectedDate,
+        handleUpdate
     }
 }

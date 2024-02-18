@@ -19,8 +19,8 @@ type PedidoCard = {
 
 function PedidosCard({ data, onDelete }: PedidoCard) {
   const navigate = useNavigate();
-  const handleEdit = () => {
-   navigate("/")
+  const handleEdit = (codigo: number) => {
+   navigate(`/pedidos-medicos/${codigo}`)
   };
 
   const handleDelete = async (codigo: number) => {
@@ -64,7 +64,7 @@ function PedidosCard({ data, onDelete }: PedidoCard) {
                 {pedido.observacao}
               </Info>
               <FlexRow>
-                <EditButton onClick={() => handleEdit()}>Editar</EditButton>
+                <EditButton onClick={() => handleEdit(pedido.codigo)}>Editar</EditButton>
                 <DeleteButton
                   onClick={() => {
                     handleDelete(pedido.codigo);

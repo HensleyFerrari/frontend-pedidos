@@ -26,6 +26,17 @@ export class PedidoService{
         }
     }
 
+    static async findOnePedido(codigo: number) {
+        try {
+            const {data}  = await httpCliente.get<PedidoReponse>(
+                `/pedido/${codigo}`
+            )
+            return data
+        } catch(erro) {
+            alert("Não foi possivel achar esse pedido")
+        }
+    }
+
     static async updatePedido({codigo,...params} : PedidoParams) {
         const { data } = await httpCliente.put(`/pedido/${codigo}`, params);
         return data;
