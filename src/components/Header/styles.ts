@@ -27,6 +27,10 @@ export const NavLink = styled(Link)`
     color: ${themeSelector.color("primary")};
     font-size: ${themeSelector.space(4)};
 
+    &:hover {
+        color: ${themeSelector.color("blue-500")}
+    }
+
     transition: all 0.3s ease-in-out;
 `
 

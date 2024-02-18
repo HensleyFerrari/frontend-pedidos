@@ -6,11 +6,12 @@ export const ButtonContainer = styled.button`
     cursor: pointer;
     border: none;
     color: #fff;
-    height: ${themeSelector.space(8)};
+    height: ${themeSelector.space(12)};
     font-size: ${themeSelector.space(4)};
     margin-top: ${themeSelector.space(5)};
-    border-radius: ${themeSelector.borderRadius("md")};
+    border-radius: ${themeSelector.borderRadius("xl")};
     width: 1200px;
+    font-weight: 700;
 
     transition: all 0.2s ease-in-out;
 

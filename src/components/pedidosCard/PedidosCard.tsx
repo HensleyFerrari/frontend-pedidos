@@ -20,7 +20,7 @@ type PedidoCard = {
 function PedidosCard({ data, onDelete }: PedidoCard) {
   const navigate = useNavigate();
   const handleEdit = (codigo: number) => {
-   navigate(`/pedidos-medicos/${codigo}`)
+    navigate(`/pedidos-medicos/${codigo}`);
   };
 
   const handleDelete = async (codigo: number) => {
@@ -45,16 +45,14 @@ function PedidosCard({ data, onDelete }: PedidoCard) {
                     .padStart(2, "0")}/${dataCirurgia.getFullYear()} `}
                 </Info>
               </FlexBetween>
-              <FlexRow>
-                <Info>
-                  <b>Procedimento: </b>
-                  {pedido.procedimento}
-                </Info>
-                <Info>
-                  <b>Médico: </b>
-                  {pedido.doutor}
-                </Info>
-              </FlexRow>
+              <Info>
+                <b>Procedimento: </b>
+                {pedido.procedimento}
+              </Info>
+              <Info>
+                <b>Médico: </b>
+                {pedido.doutor}
+              </Info>
               <Info>
                 <b>Local: </b>
                 {pedido.hospital} - sala {pedido.sala}
@@ -63,18 +61,20 @@ function PedidosCard({ data, onDelete }: PedidoCard) {
                 <b>Observação: </b>
                 {pedido.observacao}
               </Info>
-              <FlexRow>
-                <EditButton onClick={() => handleEdit(pedido.codigo)}>Editar</EditButton>
-                <DeleteButton
-                  onClick={() => {
-                    handleDelete(pedido.codigo);
-                    window.location.reload();
-                  }}
-                >
-                  Deletar
-                </DeleteButton>
-              </FlexRow>
             </Wrapper>
+            <FlexRow>
+              <EditButton onClick={() => handleEdit(pedido.codigo)}>
+                Editar
+              </EditButton>
+              <DeleteButton
+                onClick={() => {
+                  handleDelete(pedido.codigo);
+                  window.location.reload();
+                }}
+              >
+                Deletar
+              </DeleteButton>
+            </FlexRow>
           </Container>
         );
       })}

@@ -2,8 +2,11 @@ import styled from "styled-components";
 import { themeSelector } from "../../theme";
 
 export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
-    height: 200px;
+    height: 250px;
+    justify-content: space-between;
     
     background-color: ${themeSelector.color("gray-50")};
     border-radius: ${themeSelector.borderRadius("xl")};
@@ -31,7 +34,8 @@ export const EditButton = styled.button`
     padding: ${themeSelector.space(4)};
     line-height: 0;
     border: none;
-    border-radius: ${themeSelector.borderRadius("md")};
+    border-radius: ${themeSelector.borderRadius("lg")};
+    font-weight: 800;
 
     transition: background-color 0.2s ease-in-out;
 `
@@ -46,7 +50,8 @@ export const DeleteButton = styled.button`
     padding: ${themeSelector.space(4)};
     line-height: 0;
     border: none;
-    border-radius: ${themeSelector.borderRadius("md")};
+    border-radius: ${themeSelector.borderRadius("lg")};
+    font-weight: 700;
 
     transition: background-color 0.2s ease-in-out;
 `
